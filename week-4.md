@@ -20,37 +20,40 @@ Nesta semana iremos aprender um assunto que parece um pouco distante do que espe
 
 ### 📅 Roteiro de Estudos
 
-Para que o nosso encontro prático seja produtivo, precisamos que você entenda a lógica antes de codar. Siga o roteiro abaixo:
+Para que o nosso encontro prático seja produtivo, montamos um **caminho guiado**. Siga a ordem a seguir para construir seu conhecimento passo a passo. Sinta-se a vontade para pesquisar outros materiais e compartilhá-los no nosso canal de discussão.
 
-#### 1. O Conceito Fundamental
+Importante dizer que os materiais citados a seguir vão além do conteúdo dessa semana. Fiquem a vontade para já irem aprofundando, mas saibam que ainda entraremos nos assuntos de busca com heurísticas e otimização, portanto é opcional por hora.
 
-Antes de sair buscando, precisamos saber **representar** o problema. Em IA, transformamos o mundo em **Estados** e **Ações**.
+#### 1. A Visão Geral (Visualizando o Problema)
 
-- **Leitura Importante:** [Representação de Problemas e Espaço de Estados](INSERIR_LINK_AQUI)
-  - _Foco:_ Entenda o que é Estado Inicial, Estado Meta e Função Sucessora.
+Antes de pensar em código, precisamos entender **o que** o computador está tentando fazer. Portanto escolhemos a aula **"Search - CS50"** (Link na tabela abaixo) para introduzir o assunto de representação e buscas.
 
+Esse recurso introduz de forma bastante didática buscas com exemplos visuais. Aqui é explorado também os algoritmos de **Busca em Largura (BFS)** e **Profundidade (DFS)** e a implementação desses algoritmos.
 
-#### 2. Os Algoritmos (O "Como")
+A ideia é que vocês comecem a entender onde esse assunto se insere, como representar estados e ações e como esses algoritmos resolvem o problema.
 
-Começaremos com duas estratégias clássicas de "Busca sem Informação" (ou Busca Cega):
+#### 2. Aprofundando
 
-- **Busca em Largura (BFS):** O algoritmo cauteloso que olha tudo ao redor antes de ir fundo. Garante o menor caminho (em grafos não ponderados), mas gasta muita memória.
-- **Busca em Profundidade (DFS):** O algoritmo aventureiro que vai o mais longe possível em um caminho e só volta se der de cara com a parede. Gasta pouca memória, mas pode se perder ou não achar o melhor caminho.
+Agora que você já está mais familiarizado com a ideia, o próximo vídeo que julgamos interessante é o **"Problem Solving and Search - Dave Churchill"**. Aqui igualmente ao recurso anterior, é uma aula introdutória, mas que se traz um conteúdo mais denso e teórico.
+
+Este vídeo é bastante importante para a sua implementação. Ele mostra que a única diferença entre uma **BFS** e **DFS** é a estrutura de dados e vai além. Como esses algoritmos se comportam em termos de performance e espaço? Qual é a complexidade de um para o outro?
+
+Importante prestar atenção pois você terá de fazer essa análise das suas implementações.
+
+#### 3. Consolidando o Conhecimento com o Ricardo do Medium
+
+Para fechar a teoria e garantir que os termos estão claros. Leia o artigo do **Ricardo Matsumura**. Aqui a ideia é consolidar o conhecimento e fazer o paralelo dos termos em inglês para o português, com uma revisão didática do professor Ricardo do Medium.
 
 ### 📚 Material de Apoio
 
-Reunimos os melhores materiais para você dominar o assunto:
+Reunimos os materiais que julgamos mais interessantes
 
-**Leituras**
-
-| Tipo | Tópico | Descrição | Link |
-| :--: | :--- | :--- | :--: |
-| 📄 | **Representação** | Representação e problem solving | [Acessar](https://drive.google.com/file/d/150sue3u4TUUaudYdEehR28kJAFmQEHON/view?usp=sharing) |
-| 📄 | **Buscas** | Buscas - Resumido (Ricardo) | [Acessar](https://ricardomatsumura.medium.com/algoritmos-de-busca-para-intelig%C3%AAncia-artificial-7cb81172396c) |
-| 🎥 | **Representação** | Representação do Conhecimento | [Assistir Vídeo](https://www.youtube.com/watch?v=V-O-RFSRe-E) |
-| 🎥 | **BFS** | Como funciona a Busca em Largura | [Assistir Vídeo](https://www.youtube.com/watch?v=KiCBXu4P-2Y) |
-| 🎥 | **DFS** | Como funciona a Busca em Profundidade | [Assistir Vídeo](https://www.youtube.com/watch?v=7fujbpJ0LB4) |
-| 📘 | **Referência** | Capítulo do Livro Norvig (Buscas Não Informadas) | [Acessar](https://drive.google.com/file/d/1c_dFxt3KONbV7Z-r5Cr0smG8siCAe3le/view?usp=sharing) |
+| Tipo | Tópico              | Descrição                                                                                               |                                                       Link                                                        |
+| :--: | :------------------ | :------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------: |
+|  🎥  | **Conceito Visual** | **CS50 - Search (Harvard):** A melhor visualização de labirintos e Fronteiras.                          |                              [Assistir](https://www.youtube.com/watch?v=WbzNRTTrX0g)                              |
+|  🎥  | **Lógica Prática**  | **Dave Churchill - Intro to AI:** A diferença crucial entre Fila vs. Pilha e Busca em Árvore vs. Grafo. |                              [Assistir](https://www.youtube.com/watch?v=m9lPatLXE8s)                              |
+|  📄  | **Teoria**          | **Algoritmos de Busca (Ricardo Matsumura):** Explicação didática e em português.                        | [Acessar](https://ricardomatsumura.medium.com/algoritmos-de-busca-para-intelig%C3%AAncia-artificial-7cb81172396c) |
+|  📘  | **Referência**      | **Capítulo 3 - Russell & Norvig:** Para quem quer o rigor matemático (Opcional/Consulta).               |           [Acessar](https://drive.google.com/file/d/1c_dFxt3KONbV7Z-r5Cr0smG8siCAe3le/view?usp=sharing)           |
 
 ### 🎯 Missão da Semana: O Quebra-Cabeça (8-Puzzle)
 
@@ -62,12 +65,11 @@ O computador receberá o tabuleiro embaralhado e deverá nos dizer a sequência 
 2. Prepare seu ambiente Jupyter/Colab. Use [Modelo de Relatório.](https://colab.research.google.com/drive/1dQf8LOmDxFZFxQIOCO2MJDh_shXa-tnj?usp=sharing)
 3. Tente implementar a estrutura de "Nó" e "Estado" conforme estudado.
 4. Implemente (em ordem de dificuldade, vá até onde conseguir):
-  - Busca em profundidade
-  - Busca em largura
-  - Busca em profundidade com aprofundamento iterativo
+
+- Busca em profundidade
+- Busca em largura
+- Busca em profundidade com aprofundamento iterativo
+
 5. Compare características, uso de memória, tempo de execução, comportamento, etc.
 
-
-
 [Voltar para o início](./)
-
