@@ -44,16 +44,21 @@ Importante prestar atenção pois você terá de fazer essa análise das suas im
 
 Para fechar a teoria e garantir que os termos estão claros. Leia o artigo do **Ricardo Matsumura**. Aqui a ideia é consolidar o conhecimento e fazer o paralelo dos termos em inglês para o português, com uma revisão didática do professor Ricardo do Medium.
 
+### 4. Extras
+
+Elencamos também o livro do Russel e Norvig com o capítulo de buscas opcionalmente com o rigor matemático e teórico.
+
 ### 📚 Material de Apoio
 
 Reunimos os materiais que julgamos mais interessantes
 
-| Tipo | Tópico              | Descrição                                                                                               |                                                       Link                                                        |
-| :--: | :------------------ | :------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------: |
-|  🎥  | **Conceito Visual** | **CS50 - Search (Harvard):** A melhor visualização de labirintos e Fronteiras.                          |                              [Assistir](https://www.youtube.com/watch?v=WbzNRTTrX0g)                              |
-|  🎥  | **Lógica Prática**  | **Dave Churchill - Intro to AI:** A diferença crucial entre Fila vs. Pilha e Busca em Árvore vs. Grafo. |                              [Assistir](https://www.youtube.com/watch?v=m9lPatLXE8s)                              |
-|  📄  | **Teoria**          | **Algoritmos de Busca (Ricardo Matsumura):** Explicação didática e em português.                        | [Acessar](https://ricardomatsumura.medium.com/algoritmos-de-busca-para-intelig%C3%AAncia-artificial-7cb81172396c) |
-|  📘  | **Referência**      | **Capítulo 3 - Russell & Norvig:** Para quem quer o rigor matemático (Opcional/Consulta).               |           [Acessar](https://drive.google.com/file/d/1c_dFxt3KONbV7Z-r5Cr0smG8siCAe3le/view?usp=sharing)           |
+| Tipo | Tópico                    | Descrição                                                                                               |                                                       Link                                                        |
+| :--: | :------------------------ | :------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------: |
+|  🎥  | **Conceito Visual**       | **CS50 - Search (Harvard):** A melhor visualização de labirintos e Fronteiras.                          |                              [Assistir](https://www.youtube.com/watch?v=WbzNRTTrX0g)                              |
+|  🎥  | **Lógica Prática**        | **Dave Churchill - Intro to AI:** A diferença crucial entre Fila vs. Pilha e Busca em Árvore vs. Grafo. |                              [Assistir](https://www.youtube.com/watch?v=m9lPatLXE8s)                              |
+|  📄  | **Teoria**                | **Algoritmos de Busca (Ricardo Matsumura):** Explicação didática e em português.                        | [Acessar](https://ricardomatsumura.medium.com/algoritmos-de-busca-para-intelig%C3%AAncia-artificial-7cb81172396c) |
+|  📘  | **Referência**            | **Capítulo 3 - Russell & Norvig:** Para quem quer o rigor matemático (Opcional/Consulta).               |           [Acessar](https://drive.google.com/file/d/1c_dFxt3KONbV7Z-r5Cr0smG8siCAe3le/view?usp=sharing)           |
+|  🎮  | **Algoritmos Interativo** | **Red Blob Games:** Explicação dos algoritmos e exemplos interativos para ver como eles se comportam    |                   [Acessar](https://www.redblobgames.com/pathfinding/a-star/introduction.html)                    |
 
 ### 🎯 Missão da Semana: O Quebra-Cabeça (8-Puzzle)
 
