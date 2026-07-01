@@ -5,9 +5,6 @@ title: Semana 5 - Buscas Com Informação
 
 # Semana 5 - Buscas Com Informação
 
-![A* Pathfinding](https://www.redblobgames.com/pathfinding/a-star/a-star-tradeoffs.png)
-_Imagem retirada de [Red Blob Games - Introduction to A*](https://www.redblobgames.com/pathfinding/a-star/introduction.html)_
-
 Na semana passada exploramos as **Buscas Sem Informação** (BFS, DFS e aprofundamento iterativo). Vimos que esses algoritmos funcionam, mas exploram o espaço de estados "às cegas", sem nenhuma pista sobre o quão perto estão da solução.
 
 Nesta semana damos o próximo passo: e se o nosso agente tivesse uma **intuição** que o ajudasse a decidir por onde ir primeiro? É exatamente essa a ideia da **Busca Com Informação** (ou busca informada).
