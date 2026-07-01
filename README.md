@@ -9,7 +9,8 @@ O presente material serve como base de estudos e aprofundamento para o treinamen
 | 1 | [Boas Vindas](week-1.md) |
 | 2 | [Colab e Ferramentas](week-2.md) |
 | 3 | [Apresentação de Trabalhos do Hub2IA](week-3.md) |
-| 4 | [Buscas](week-4.md) |
+| 4 | [Buscas Sem Informação](week-4.md) |
+| 5 | [Buscas Com Informação](week-5.md) |
 
 
 ## 📞 Dúvidas?

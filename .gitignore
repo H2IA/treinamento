@@ -1,0 +1,12 @@
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler (gems instaladas localmente pelo preview via Docker)
+vendor/
+.bundle/
+
+# Preview local (não usado pelo GitHub Pages)
+Gemfile
+Gemfile.lock
