@@ -75,4 +75,14 @@ Nem toda configuração do 8-Puzzle tem solução — algumas nunca alcançam o 
 
 > **Reflexão:** qual a vantagem de checar a solubilidade antes de rodar o A\*? O que acontece com o tempo de execução ao tentar resolver um estado insolúvel? E em versões maiores, como o 15-Puzzle?
 
+### 📤 Como Entregar
+
+Suba sua solução (o notebook `.ipynb` do Colab e quaisquer arquivos do trabalho) no seu repositório **`treinamento-h2ia`** no GitHub. Em seguida, envie o **link do repositório** através do formulário abaixo:
+
+| Tipo | Descrição | Link |
+| :--: | :-------- | :--: |
+| 📝 | **Formulário de Entrega:** envie aqui o link do seu repositório no GitHub | [Enviar Trabalho](https://docs.google.com/forms/d/e/1FAIpQLSdhc2nfeByHE9Hkan-FIlmC1ZWm40Wy_p9QhDniECQWcVcvTA/viewform?usp=dialog) |
+
+> 💡 Certifique-se de que o repositório esteja **público** (ou compartilhado) para que possamos acessá-lo, e que o notebook esteja salvo com as saídas das execuções visíveis.
+
 [Voltar para o início](./)
