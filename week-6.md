@@ -56,7 +56,6 @@ Sua missão é implementar **dois algoritmos de busca do zero** e usá-los para 
 f(x) = 10·n + Σ [ xᵢ² − 10·cos(2π·xᵢ) ]   , para i = 1..n
 ```
 
-- Domínio usual: cada `xᵢ ∈ [-5.12, 5.12]`.
 - **Mínimo global:** `f(x) = 0` em `x = (0, 0, ..., 0)`.
 - Trabalhe com **10 ou mais dimensões** (`n ≥ 10`). O termo do cosseno cria inúmeros mínimos locais, o que torna a otimização desafiadora e ótima para comparar estratégias.
 
