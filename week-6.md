@@ -69,9 +69,11 @@ f(x) = 10·n + Σ [ xᵢ² − 10·cos(2π·xᵢ) ]   , para i = 1..n
 
 ### 📤 Como Entregar
 
-Suba sua solução (o notebook `.ipynb` do Colab e quaisquer arquivos) no seu repositório **`treinamento-h2ia`** no GitHub.
+Suba sua solução (o notebook `.ipynb` do Colab e quaisquer arquivos) no seu repositório **`treinamento-h2ia`** no GitHub e envie o **link do repositório** através do formulário abaixo:
 
-> 📌 O link do **formulário de entrega** será disponibilizado em breve aqui nesta página.
+| Tipo | Descrição | Link |
+| :--: | :-------- | :--: |
+| 📝 | **Formulário de Entrega:** envie aqui o link do seu repositório no GitHub | [Enviar Trabalho](https://docs.google.com/forms/d/e/1FAIpQLSeaoaM-Pi3uI0ZrLtPtn3O8tnfko79evU4OOQPdMIi4q0LuDQ/viewform) |
 
 > 💡 Certifique-se de que o repositório esteja **público** (ou compartilhado) e que o notebook esteja salvo com as saídas das execuções visíveis.
 
