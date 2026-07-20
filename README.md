@@ -11,6 +11,7 @@ O presente material serve como base de estudos e aprofundamento para o treinamen
 | 3 | [Apresentação de Trabalhos do Hub2IA](week-3.md) |
 | 4 | [Buscas Sem Informação](week-4.md) |
 | 5 | [Buscas Com Informação](week-5.md) |
+| 6 | [Otimização e Metaheurísticas](week-6.md) |
 
 
 ## 📞 Dúvidas?
