@@ -5,41 +5,53 @@ title: Semana 5 - Buscas Com Informação
 
 # Semana 5 - Buscas Com Informação
 
-Na semana passada exploramos as **Buscas Sem Informação** (BFS, DFS e aprofundamento iterativo). Vimos que esses algoritmos funcionam, mas exploram o espaço de estados "às cegas", sem nenhuma pista sobre o quão perto estão da solução.
+Na [semana 4](week-4.md), estudamos como explorar possibilidades usando fila e pilha. Essas estratégias conhecem os movimentos permitidos e sabem reconhecer o objetivo, mas não usam uma estimativa de quanto falta para chegar até ele.
 
-Nesta semana damos o próximo passo: e se o nosso agente tivesse uma **intuição** que o ajudasse a decidir por onde ir primeiro? É exatamente essa a ideia da **Busca Com Informação** (ou busca informada).
+Agora vamos acrescentar essa informação. No 8-puzzle, uma peça longe de sua posição final ainda terá de se mover. Podemos usar as distâncias das peças para estimar o trabalho restante e escolher quais possibilidades analisar primeiro.
 
-**Você já parou pra pensar:**
+## Antes de começar
 
-- Ao procurar um endereço numa cidade nova, você caminha em qualquer direção ou tende a ir para o lado onde *acha* que o destino está?
-- Como o **GPS** consegue traçar uma rota boa sem testar literalmente todos os caminhos possíveis do mapa?
+Você precisa conseguir acompanhar uma busca pequena e explicar estado, nó, fronteira e caminho da solução. Se esses termos ainda se confundem, retome o exemplo da semana 4. Não é necessário ter concluído o aprofundamento iterativo para estudar esta parte.
 
-A resposta está no uso de **heurísticas**: estimativas que guiam a busca em direção ao objetivo, tornando-a muito mais eficiente.
+## Roteiro de estudo
 
-## 🧭 Conteúdo da Semana
+### 1. Construir uma estimativa
 
-De forma breve, os conceitos centrais desta semana são:
+Abra a explicação interativa do Red Blob Games e acompanhe a comparação entre busca em largura, busca gulosa e A*. Observe quais posições cada estratégia analisa antes de chegar ao destino.
 
-- **Heurística `h(n)`** — uma função que *estima* o custo restante de um estado até o objetivo. Ela não precisa ser exata, apenas uma boa "aposta" que oriente a exploração (ex.: distância em linha reta até o destino).
-- **Busca Gulosa (Greedy Search)** — expande sempre o estado que *parece* mais próximo do objetivo, ou seja, aquele com menor `h(n)`. É rápida, mas pode se enganar e não garante o melhor caminho.
-- **Algoritmo A\*** — combina o **custo já percorrido** `g(n)` com a **estimativa do que falta** `h(n)`, escolhendo o estado com menor `f(n) = g(n) + h(n)`. Com uma boa heurística, o A\* encontra o caminho ótimo de forma eficiente, unindo o melhor da busca gulosa com as garantias das buscas sem informação.
+A função que estima o custo restante é chamada de **heurística**, escrita como `h(n)`. No 8-puzzle, vamos usar a distância de Manhattan: para cada peça numerada, conte quantas linhas e colunas a separam da posição correta e some os valores. O espaço vazio não entra nessa conta.
 
-> A principal diferença entre a **Busca Gulosa** e o **A\*** é justamente o `g(n)`: a gulosa olha só para a estimativa do futuro; o A\* também leva em conta o caminho que já foi feito.
+Por exemplo, se apenas a peça 8 estiver ao lado de sua posição final e puder entrar nela com uma jogada, a estimativa será 1. Em outros tabuleiros, as peças podem atrapalhar umas às outras: somar as distâncias não resolve o quebra-cabeça, apenas fornece um limite inferior para o número de movimentos necessários.
 
-Os detalhes, exemplos visuais e a formalização de cada algoritmo estão nos **slides da aula** (link na tabela abaixo). Recomendamos acompanhá-los junto com os materiais de apoio.
+### 2. Comparar duas maneiras de usar a pista
 
-### 📚 Material de Apoio
+A **busca gulosa** escolhe o nó com menor `h(n)`. Ela dá prioridade ao que parece mais próximo do objetivo. Isso pode reduzir bastante a exploração, mas também pode conduzir a um caminho ruim. Ela não garante o caminho mais curto nem é sempre mais rápida.
+
+O **A\*** considera também o custo já percorrido, `g(n)`. Sua prioridade é `f(n) = g(n) + h(n)`. Se um nó tem `g=8` e `h=2`, sua prioridade é 10. Outro com `g=3` e `h=4` tem prioridade 7. A gulosa escolheria o primeiro; A* escolheria o segundo.
+
+Acompanhe agora a parte de buscas informadas da aula “Search”, do CS50. Refaça uma comparação de prioridades antes de conferir a escolha do algoritmo. Os slides da aula podem ser usados depois como revisão.
+
+### 3. Entender a garantia do A*
+
+Para encontrar um caminho ótimo, não basta que a heurística pareça razoável. Uma heurística **admissível** nunca estima um custo maior que o mínimo realmente necessário. A distância de Manhattan tem essa propriedade no 8-puzzle com movimentos de custo 1: cada jogada desloca uma única peça numerada em uma casa.
+
+Ela também é **consistente**: a estimativa antes de uma jogada não é maior que o custo dessa jogada somado à estimativa depois dela. Com essa propriedade e o tratamento correto dos custos, A* pode fechar um estado quando o retira da fila de prioridade, sem precisar expandi-lo novamente. A implementação deve reconhecer a solução quando o objetivo for retirado da fila, e não assim que ele aparecer entre os sucessores.
+
+O capítulo de Russell e Norvig é a referência para aprofundar essas condições. Se você experimentar outra heurística, não presuma que ela mantém as mesmas garantias.
+
+### Material de Apoio
 
 | Tipo | Tópico                    | Descrição                                                                                                  |                                                       Link                                                        |
 | :--: | :------------------------ | :-------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------: |
-|  📊  | **Slides da Aula**        | **Buscas Com Informação:** material apresentado no encontro, com heurística, Busca Gulosa e A\*.           |    [Acessar](https://docs.google.com/presentation/d/1gQBiVvTEjgxpcvZoT_5FTiXrYjlmtFBunQxXGeUf4JM/edit?usp=sharing)    |
-|  🎮  | **Algoritmos Interativo** | **Red Blob Games:** visualize e compare Busca Gulosa e A\* interativamente e veja como a heurística guia a busca. |                   [Acessar](https://www.redblobgames.com/pathfinding/a-star/introduction.html)                    |
-|  🎥  | **Conceito Visual**       | **CS50 - Search (Harvard):** revisão de buscas informadas, heurísticas e A\* (continuação da semana passada). |                              [Assistir](https://www.youtube.com/watch?v=WbzNRTTrX0g)                              |
-|  📘  | **Referência**            | **Capítulo 3 - Russell & Norvig:** para quem quer o rigor matemático de heurísticas e A\* (Opcional/Consulta). |           [Acessar](https://drive.google.com/file/d/1c_dFxt3KONbV7Z-r5Cr0smG8siCAe3le/view?usp=sharing)           |
+| Slides | **Slides da aula: Buscas** | Slides para acompanhar o estudo de buscas. | [Acessar](https://drive.google.com/file/d/1apKudeSNBhu1rGrKrG4B7cd-S2fhmwvN/view?usp=sharing) |
+| Slides | **Slides complementares**        | **Buscas Com Informação:** material apresentado no encontro, com heurística, Busca Gulosa e A\*.           |    [Acessar](https://docs.google.com/presentation/d/1gQBiVvTEjgxpcvZoT_5FTiXrYjlmtFBunQxXGeUf4JM/edit?usp=sharing)    |
+| Interativo | **Exemplo interativo** | **Red Blob Games:** visualize e compare Busca Gulosa e A\* interativamente e veja como a heurística guia a busca. |                   [Acessar](https://www.redblobgames.com/pathfinding/a-star/introduction.html)                    |
+| Vídeo | **Conceito Visual**       | **CS50 - Search (Harvard):** revisão de buscas informadas, heurísticas e A\* (continuação da semana passada). |                              [Assistir](https://www.youtube.com/watch?v=WbzNRTTrX0g)                              |
+| Livro | **Referência**            | **Capítulo 3 - Russell & Norvig:** para quem quer o rigor matemático de heurísticas e A\* (Opcional/Consulta). |           [Acessar](https://drive.google.com/file/d/1c_dFxt3KONbV7Z-r5Cr0smG8siCAe3le/view?usp=sharing)           |
 
-### 🎯 Missão da Semana: Resolvendo o 8-Puzzle com A\*
+### Atividade: Resolvendo o 8-Puzzle com A\*
 
-Na semana passada você atacou o **8-Puzzle** com buscas sem informação. Agora sua missão é resolver o **mesmo problema** usando **Busca Com Informação**, implementando o algoritmo **A\*** e comparando os resultados.
+A atividade usa o mesmo 8-puzzle da semana 4. Aproveite a representação do tabuleiro e a geração de movimentos para implementar A* e comparar os resultados. Se ainda não concluiu a atividade anterior, comece conferindo essas duas partes com um tabuleiro a uma jogada do objetivo.
 
 O tabuleiro é uma grade 3×3 com oito peças numeradas e um espaço vazio (`0`). O objetivo é ordená-lo até o estado alvo:
 
@@ -51,14 +63,16 @@ O tabuleiro é uma grade 3×3 com oito peças numeradas e um espaço vazio (`0`)
 
 **Componentes a implementar (no Colab):**
 
-1. **Representação do estado** — escolha a estrutura que preferir (lista, matriz, tupla...).
-2. **Nó de busca** — deve guardar: o estado, `g(n)`, `h(n)`, `f(n)`, o nó pai e o movimento que o gerou (para reconstruir o caminho no final).
-3. **Geração de sucessores** — localize o `0`, identifique os movimentos válidos (cima/baixo/esquerda/direita, sem sair do tabuleiro) e gere os novos estados.
-4. **Custo `g(n)`** — número de movimentos desde o início; cada movimento custa 1, então `g(filho) = g(pai) + 1`.
-5. **Heurística `h(n)`** — use a **Distância de Manhattan**: para cada peça, `|linha_atual - linha_objetivo| + |coluna_atual - coluna_objetivo|`, somada para todas as peças (o espaço vazio `0` **não** entra no cálculo).
-6. **Avaliação `f(n) = g(n) + h(n)`** — lembre-se: o A\* expande o estado com menor `f(n)`, **não** o de menor `h(n)`. Essa é a diferença para a Busca Gulosa.
+1. **Representação do estado**: escolha a estrutura que preferir (lista, matriz, tupla...).
+2. **Nó de busca**: deve guardar: o estado, `g(n)`, `h(n)`, `f(n)`, o nó pai e o movimento que o gerou (para reconstruir o caminho no final).
+3. **Geração de sucessores**: localize o `0`, identifique os movimentos válidos (cima/baixo/esquerda/direita, sem sair do tabuleiro) e gere os novos estados.
+4. **Custo `g(n)`**: número de movimentos desde o início; cada movimento custa 1, então `g(filho) = g(pai) + 1`.
+5. **Heurística `h(n)`**: use a **Distância de Manhattan**: para cada peça, `|linha_atual - linha_objetivo| + |coluna_atual - coluna_objetivo|`, somada para todas as peças (o espaço vazio `0` **não** entra no cálculo).
+6. **Avaliação `f(n) = g(n) + h(n)`**: lembre-se: o A\* expande o estado com menor `f(n)`, **não** o de menor `h(n)`. Essa é a diferença para a Busca Gulosa.
 
-**Estruturas recomendadas:** uma **fila de prioridade** para a fronteira (*open list*, sempre expandindo o menor `f(n)`) e um **conjunto de visitados** (*closed list*) para não reexpandir estados repetidos.
+Use uma **fila de prioridade** para a fronteira e guarde o menor custo `g` encontrado para cada estado. Se descobrir um caminho mais barato até um estado que ainda está na fronteira, atualize o custo e o caminho correspondente. Se a fila guardar entradas antigas, descarte-as quando forem retiradas.
+
+Não marque um estado como encerrado só porque ele foi gerado. Com Manhattan neste problema, o conjunto de estados fechados deve registrar os que já foram retirados para expansão pelo menor `f`. Heurísticas admissíveis que não sejam consistentes podem exigir reabrir estados quando surgir um caminho melhor.
 
 **Ao final, exiba:**
 
@@ -67,22 +81,24 @@ O tabuleiro é uma grade 3×3 com oito peças numeradas e um espaço vazio (`0`)
 - A quantidade de estados expandidos;
 - (Opcional) O tempo de execução.
 
-**Compare com a semana anterior:** quantos estados o A\* expandiu em relação à BFS/DFS? O caminho encontrado foi ótimo? Reflita sobre o impacto da heurística na eficiência.
+Compare BFS, DFS e A* nos mesmos tabuleiros. Comece por casos pequenos, em que a BFS consiga servir de referência para o menor número de movimentos. Registre também como desempata prioridades iguais; essa escolha pode alterar a quantidade de nós expandidos.
 
-#### 🧩 Desafio Extra (Opcional): Solubilidade
+Antes de seguir, confira: você consegue calcular `g`, `h` e `f` de um nó e explicar qual deles a gulosa usa? Seu A* devolve um caminho válido com o mesmo comprimento da BFS nesses casos?
 
-Nem toda configuração do 8-Puzzle tem solução — algumas nunca alcançam o objetivo, faça o que fizer. Antes de rodar o A\*, implemente uma verificação que detecte se o estado inicial é solucionável e, se não for, avise e encerre. Pesquise sobre **número de inversões** e **paridade de estados**.
+#### Desafio Extra (Opcional): Solubilidade
+
+Nem toda configuração do 8-Puzzle tem solução: algumas nunca alcançam o objetivo, faça o que fizer. Antes de rodar o A\*, implemente uma verificação que detecte se o estado inicial é solucionável e, se não for, avise e encerre. Pesquise sobre **número de inversões** e **paridade de estados**.
 
 > **Reflexão:** qual a vantagem de checar a solubilidade antes de rodar o A\*? O que acontece com o tempo de execução ao tentar resolver um estado insolúvel? E em versões maiores, como o 15-Puzzle?
 
-### 📤 Como Entregar
+### Como Entregar
 
 Suba sua solução (o notebook `.ipynb` do Colab e quaisquer arquivos do trabalho) no seu repositório **`treinamento-h2ia`** no GitHub. Em seguida, envie o **link do repositório** através do formulário abaixo:
 
 | Tipo | Descrição | Link |
 | :--: | :-------- | :--: |
-| 📝 | **Formulário de Entrega:** envie aqui o link do seu repositório no GitHub | [Enviar Trabalho](https://docs.google.com/forms/d/e/1FAIpQLSdhc2nfeByHE9Hkan-FIlmC1ZWm40Wy_p9QhDniECQWcVcvTA/viewform?usp=dialog) |
+| Formulário | **Formulário de Entrega:** envie aqui o link do seu repositório no GitHub | [Enviar Trabalho](https://docs.google.com/forms/d/e/1FAIpQLSdhc2nfeByHE9Hkan-FIlmC1ZWm40Wy_p9QhDniECQWcVcvTA/viewform?usp=dialog) |
 
-> 💡 Certifique-se de que o repositório esteja **público** (ou compartilhado) para que possamos acessá-lo, e que o notebook esteja salvo com as saídas das execuções visíveis.
+> Certifique-se de que o repositório esteja **público** (ou compartilhado) para que possamos acessá-lo, e que o notebook esteja salvo com as saídas das execuções visíveis.
 
 [Voltar para o início](./)

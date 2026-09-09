@@ -8,59 +8,56 @@ title: Semana 4 - Buscas Sem Informação
 ![Alt image](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*VM84VPcCQe0gSy44l9S5yA.jpeg)
 _Imagem retirada de [Breaking Down Breadh-First Search](https://medium.com/basecs/breaking-down-breadth-first-search-cebe696709d9)_
 
-Nesta semana, iremos começar as implementações e de fato dar o ponta-pé inicial. Começaremos introduzindo conceitos da inteligência artificial clássica.
+Imagine um quebra-cabeça com oito peças e um espaço vazio. Você pode deslizar uma peça vizinha para o espaço vazio, mas como escolher uma sequência de movimentos que coloque tudo em ordem?
 
-**Você já parou pra pensar:**
+Esse será nosso primeiro problema de busca. Antes de escolher um algoritmo, precisamos descrever o tabuleiro, os movimentos permitidos e a configuração que queremos alcançar. Depois, precisamos decidir em que ordem experimentar as possibilidades.
 
-- Como o **Google Maps** ou **Waze** encontram o caminho mais curto entre a sua casa e a faculdade com incontáveis caminhos a serem percorridos?
-- Como uma IA de xadrez decide a próxima jogada analisando milhões de possibilidades?
-- Como um robô aspirador sabe como sair de um quarto sem bater nas paredes?
+## Antes de começar
 
-Nesta semana iremos aprender um assunto que parece um pouco distante do que esperamos do hype da IA, mas de extrema importância e que resolve e auxilia em diversos problemas como os supracitados.
+Você vai usar listas, funções, condições e repetições em Python. Se ainda não está confortável com esses recursos, retome a [semana 2](week-2.md). Para começar a entender o problema, porém, basta desenhar um tabuleiro e fazer alguns movimentos no papel.
 
-### 📅 Roteiro de Estudos
+## Roteiro de estudo
 
-Para que o nosso encontro prático seja produtivo, montamos um **caminho guiado**. Siga a ordem a seguir para construir seu conhecimento passo a passo. Sinta-se a vontade para pesquisar outros materiais e compartilhá-los no nosso canal de discussão.
+### 1. Representar o problema
 
-Importante dizer que os materiais citados a seguir vão além do conteúdo dessa semana. Fiquem a vontade para já irem aprofundando, mas saibam que ainda entraremos nos assuntos de busca com heurísticas e otimização, portanto é opcional por hora.
+Comece pela parte de buscas sem informação da aula “Search”, do CS50. Observe como um problema vira estados e ações. No quebra-cabeça, o estado é a disposição de todas as peças, incluindo o espaço vazio. Uma ação é um movimento permitido; a transição é o novo tabuleiro produzido por esse movimento.
 
-#### 1. A Visão Geral (Visualizando o Problema)
+Desenhe um tabuleiro e todos os tabuleiros que podem surgir depois de uma jogada. Faça mais uma jogada em um deles. Você consegue voltar ao estado anterior? Essa repetição será importante quando passarmos ao código.
 
-Antes de pensar em código, precisamos entender **o que** o computador está tentando fazer. Portanto escolhemos a aula **"Search - CS50"** (Link na tabela abaixo) para introduzir o assunto de representação e buscas.
+### 2. Escolher o que explorar primeiro
 
-Esse recurso introduz de forma bastante didática buscas com exemplos visuais. Aqui é explorado também os algoritmos de **Busca em Largura (BFS)** e **Profundidade (DFS)** e a implementação desses algoritmos.
+Continue com BFS e DFS. A fronteira guarda as possibilidades descobertas que ainda aguardam análise. A BFS usa uma fila para explorar primeiro as mais antigas; a DFS usa uma pilha para explorar primeiro as mais recentes. Mantendo o restante da implementação igual, essa mudança altera a ordem da busca.
 
-A ideia é que vocês comecem a entender onde esse assunto se insere, como representar estados e ações e como esses algoritmos resolvem o problema.
+Um nó de busca guarda um estado e informações sobre o caminho até ele, como o nó anterior e o movimento realizado. Isso permite reconstruir a solução. Dois nós podem conter o mesmo tabuleiro e ter chegado a ele por caminhos diferentes.
 
-#### 2. Aprofundando
+Antes de executar o exemplo do vídeo, pause e tente prever qual nó sairá da fronteira. Depois veja se a sua previsão estava certa.
 
-Agora que você já está mais familiarizado com a ideia, o próximo vídeo que julgamos interessante é o **"Problem Solving and Search - Dave Churchill"**. Aqui igualmente ao recurso anterior, é uma aula introdutória, mas que se traz um conteúdo mais denso e teórico.
+### 3. Passar da ideia à implementação
 
-Este vídeo é bastante importante para a sua implementação. Ele mostra que a única diferença entre uma **BFS** e **DFS** é a estrutura de dados e vai além. Como esses algoritmos se comportam em termos de performance e espaço? Qual é a complexidade de um para o outro?
+A aula de Dave Churchill aprofunda a organização da busca e a comparação entre os métodos. Use-a depois de conseguir acompanhar um exemplo pequeno de fila e pilha. Preste atenção ao tratamento de estados repetidos e à diferença entre o caminho da solução e todos os nós que o algoritmo precisou explorar.
 
-Importante prestar atenção pois você terá de fazer essa análise das suas implementações.
+No nosso quebra-cabeça, cada movimento custa 1. Nessas condições, a BFS encontra uma solução com o menor número de movimentos, quando existe solução. A DFS pode encontrar um caminho mais longo. O custo de guardar a fronteira também merece atenção: uma solução curta não significa necessariamente uma busca pequena.
 
-#### 3. Consolidando o Conhecimento com o Ricardo do Medium
+### 4. Consultar outra explicação
 
-Para fechar a teoria e garantir que os termos estão claros. Leia o artigo do **Ricardo Matsumura**. Aqui a ideia é consolidar o conhecimento e fazer o paralelo dos termos em inglês para o português, com uma revisão didática do professor Ricardo do Medium.
+O texto de Ricardo Matsumura ajuda a revisar o vocabulário em português. O capítulo de Russell e Norvig fica como aprofundamento, especialmente para as propriedades e a complexidade dos algoritmos. O Red Blob Games oferece exemplos interativos para comparar estratégias.
 
-### 4. Extras
+Alguns desses recursos também tratam de heurísticas e A*. Você pode deixar essas partes para a semana 5. Primeiro, procure explicar uma execução de BFS e de DFS sem depender do vídeo.
 
-Elencamos também o livro do Russel e Norvig com o capítulo de buscas opcionalmente com o rigor matemático e teórico.
+### Material de Apoio
 
-### 📚 Material de Apoio
-
-Reunimos os materiais que julgamos mais interessantes
+Siga a ordem do roteiro; os materiais de consulta podem ser retomados conforme aparecerem dúvidas.
 
 | Tipo | Tópico                    | Descrição                                                                                               |                                                       Link                                                        |
 | :--: | :------------------------ | :------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------: |
-|  🎥  | **Conceito Visual**       | **CS50 - Search (Harvard):** A melhor visualização de labirintos e Fronteiras.                          |                              [Assistir](https://www.youtube.com/watch?v=WbzNRTTrX0g)                              |
-|  🎥  | **Lógica Prática**        | **Dave Churchill - Intro to AI:** A diferença crucial entre Fila vs. Pilha e Busca em Árvore vs. Grafo. |                              [Assistir](https://www.youtube.com/watch?v=m9lPatLXE8s)                              |
-|  📄  | **Teoria**                | **Algoritmos de Busca (Ricardo Matsumura):** Explicação didática e em português.                        | [Acessar](https://ricardomatsumura.medium.com/algoritmos-de-busca-para-intelig%C3%AAncia-artificial-7cb81172396c) |
-|  📘  | **Referência**            | **Capítulo 3 - Russell & Norvig:** Para quem quer o rigor matemático (Opcional/Consulta).               |           [Acessar](https://drive.google.com/file/d/1c_dFxt3KONbV7Z-r5Cr0smG8siCAe3le/view?usp=sharing)           |
-|  🎮  | **Algoritmos Interativo** | **Red Blob Games:** Explicação dos algoritmos e exemplos interativos para ver como eles se comportam    |                   [Acessar](https://www.redblobgames.com/pathfinding/a-star/introduction.html)                    |
+| Slides | **Slides da aula: Buscas** | Slides para acompanhar o estudo de buscas. | [Acessar](https://drive.google.com/file/d/1apKudeSNBhu1rGrKrG4B7cd-S2fhmwvN/view?usp=sharing) |
+| Vídeo | **Conceito Visual**       | **CS50 - Search (Harvard):** Representação de problemas, fronteira, BFS e DFS.                          |                              [Assistir](https://www.youtube.com/watch?v=WbzNRTTrX0g)                              |
+| Vídeo | **Lógica Prática**        | **Dave Churchill - Intro to AI:** Fila, pilha e diferenças entre busca em árvore e em grafo. |                              [Assistir](https://www.youtube.com/watch?v=m9lPatLXE8s)                              |
+| Texto | **Teoria**                | **Algoritmos de Busca (Ricardo Matsumura):** Explicação didática e em português.                        | [Acessar](https://ricardomatsumura.medium.com/algoritmos-de-busca-para-intelig%C3%AAncia-artificial-7cb81172396c) |
+| Livro | **Referência**            | **Capítulo 3 - Russell & Norvig:** Para quem quer o rigor matemático (Opcional/Consulta).               |           [Acessar](https://drive.google.com/file/d/1c_dFxt3KONbV7Z-r5Cr0smG8siCAe3le/view?usp=sharing)           |
+| Interativo | **Exemplo interativo** | **Red Blob Games:** Explicação dos algoritmos e exemplos interativos para ver como eles se comportam    |                   [Acessar](https://www.redblobgames.com/pathfinding/a-star/introduction.html)                    |
 
-### 🎯 Missão da Semana: O Quebra-Cabeça (8-Puzzle)
+### Atividade: O Quebra-Cabeça (8-Puzzle)
 
 Sua tarefa prática será implementar um agente capaz de resolver o clássico **Quebra-Cabeça de Blocos Deslizantes** (8-Puzzle).
 
@@ -71,10 +68,18 @@ O computador receberá o tabuleiro embaralhado e deverá nos dizer a sequência 
 3. Tente implementar a estrutura de "Nó" e "Estado" conforme estudado.
 4. Implemente (em ordem de dificuldade, vá até onde conseguir):
 
-- Busca em profundidade
-- Busca em largura
-- Busca em profundidade com aprofundamento iterativo
+   - Busca em profundidade
+   - Busca em largura
+   - Busca em profundidade com aprofundamento iterativo
 
-5. Compare características, uso de memória, tempo de execução, comportamento, etc.
+5. Compare os algoritmos usando os mesmos tabuleiros iniciais. Registre o tamanho da solução, a quantidade de nós expandidos, o maior tamanho da fronteira e o tempo. O tamanho da fronteira é um indicador parcial do armazenamento, não uma medida de toda a memória usada.
+
+Comece por um tabuleiro a um ou dois movimentos do objetivo, produzido a partir dele por movimentos válidos. Confira se cada passo devolvido pelo algoritmo é permitido e se o caminho termina no objetivo. Depois aumente a dificuldade.
+
+O aprofundamento iterativo repete uma busca em profundidade com limites crescentes. Estude primeiro a versão com limite de profundidade. Ao repetir a busca com um limite maior, reinicie suas estruturas; guardar os visitados da rodada anterior pode impedir a exploração necessária.
+
+## Antes de seguir
+
+Você consegue explicar por que o programa não deve continuar indo e voltando entre dois tabuleiros? E por que encontrar uma solução com DFS não prova que ela seja a mais curta? Use uma execução pequena do seu código para sustentar as respostas.
 
 [Voltar para o início](./)
