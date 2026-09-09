@@ -23,7 +23,7 @@ Nesse exemplo, uma candidata é uma seleção de itens. A capacidade define uma 
 
 ### 2. Tentar melhorar uma solução
 
-Leia as seções “Local Search” e “Hill Climbing” nas notas de Optimization do CS50. Os exemplos são diferentes da mochila, mas a pergunta é a mesma: que pequena mudança podemos fazer na solução atual?
+Assista à [aula de Optimization do CS50](https://youtu.be/qK46ET1xk2A?si=aq0byCExowo6MTRB), começando pela parte de busca local e hill climbing. Os exemplos são diferentes da mochila, mas a pergunta é a mesma: que pequena mudança podemos fazer na solução atual?
 
 Chamamos de **vizinhança** o conjunto de candidatas que podemos obter com as mudanças permitidas. Na mochila, uma escolha possível é adicionar, remover ou trocar um item, sempre respeitando a capacidade. No hill climbing, comparamos vizinhos e avançamos para uma melhora.
 
@@ -31,7 +31,7 @@ O método pode parar porque nenhum vizinho melhora o resultado, mesmo existindo 
 
 ### 3. Procurar alternativas quando a melhora acaba
 
-Continue nas notas do CS50 com reinícios e simulated annealing. Um reinício começa uma nova busca de outro ponto. O simulated annealing pode aceitar uma piora, com uma probabilidade que depende de seu tamanho e de um parâmetro chamado temperatura. Assim, a busca pode sair de uma região onde só melhorar a cada passo não seria suficiente.
+Continue na aula com reinícios e simulated annealing. Um reinício começa uma nova busca de outro ponto. O simulated annealing pode aceitar uma piora, com uma probabilidade que depende de seu tamanho e de um parâmetro chamado temperatura. Assim, a busca pode sair de uma região onde só melhorar a cada passo não seria suficiente.
 
 Separe duas informações durante a execução: a candidata atual e a melhor já encontrada. Ao aceitar uma piora, elas podem deixar de coincidir. Experimente prever o que acontece com a chance de aceitar a mesma piora quando a temperatura diminui.
 
@@ -49,10 +49,11 @@ O vínculo com aprendizado de máquina aparece quando a candidata passa a ser um
 
 | Tipo | Tópico | Descrição | Link |
 | :--: | :----- | :-------- | :--: |
+| Vídeo | **Optimization, CS50** | Aula principal do roteiro. Acompanhe as explicações de busca local, hill climbing, reinícios e simulated annealing. | [Assistir](https://youtu.be/qK46ET1xk2A?si=aq0byCExowo6MTRB) |
 | Slides | **Slides da aula: Otimização** | Slides para acompanhar o estudo de otimização. | [Acessar](https://drive.google.com/file/d/1wvmSlzfdCDfTaY9C6CWxFopAToS9x4AP/view?usp=sharing) |
 | Slides | **Slides complementares** | **Busca em Espaços (Thiago Reis Porto):** otimização, mínimos local/global, exploration vs. exploitation e metaheurísticas. | [Acessar](https://docs.google.com/presentation/d/1ioLN5dje44bmHv2cdeF7xFvfW_WKW2IFrJ7lxEj38pw/edit?usp=sharing) |
 
-As [notas de Optimization do CS50](https://cs50.harvard.edu/ai/notes/3/) são a leitura principal deste roteiro. Consulte as seções indicadas enquanto refaz os exemplos. O material está em inglês e inclui assuntos além do recorte desta semana.
+As [notas de Optimization do CS50](https://cs50.harvard.edu/ai/notes/3/) ficam como consulta complementar para rever as definições e o pseudocódigo depois de assistir à aula. A aula e as notas estão em inglês e incluem assuntos além do recorte desta semana.
 
 ### Atividade: Otimizando a Função de Rastrigin
 
