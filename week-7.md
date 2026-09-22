@@ -88,7 +88,7 @@ O link do gabarito será liberado pelo professor depois dessa etapa. Ao recebê-
 ### O que entregar
 
 - o notebook executado, com sua função e as respostas às perguntas;
-- o arquivo `previsoes_frutas.csv` gerado pelo notebook;
+- o arquivo `fruit_predictions.csv` gerado pelo notebook;
 - uma breve comparação entre sua estimativa, o resultado nos exemplos conhecidos e o resultado no teste.
 
 No fechamento da atividade, o notebook dará nome às etapas que você realizou. Não é necessário antecipar esses termos para começar: primeiro observe, crie as regras e teste.
