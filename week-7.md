@@ -38,9 +38,9 @@ Uma possibilidade seria comparar o novo dia com os exemplos mais próximos. Outr
 
 ### 3. Faça a atividade das frutas
 
-Na atividade, você receberá exemplos de maçãs, tangerinas, laranjas e limões. Cada fruta tem massa, largura, altura e uma medida de cor. Sua tarefa é observar esses exemplos e escrever uma função com `if`, `elif` e `else` que devolva o nome da fruta.
+Na atividade, você receberá uma tabela completa com exemplos de maçãs, tangerinas, laranjas e limões. Cada fruta tem massa, largura, altura e uma medida de cor. Sua tarefa é examinar os exemplos, formular sua própria estratégia e escrever uma função com `if`, `elif` e `else` que devolva o nome da fruta.
 
-Não procure uma biblioteca que já faça a classificação. A parte importante é formular as regras, testá-las e perceber onde elas funcionam ou falham.
+O notebook não indicará quais características ou intervalos usar. Não procure uma biblioteca que já faça a classificação. A parte importante é enfrentar a dificuldade de formular as regras, testá-las e perceber onde elas funcionam ou falham.
 
 [Abra o notebook da atividade no Google Colab](https://colab.research.google.com/github/H2IA/treinamento/blob/main/notebooks/atividade-frutas.ipynb)
 
@@ -72,12 +72,11 @@ Essa ordem é importante. Se você consultar as respostas do teste e continuar a
 ### Parte 1 — observar e criar as regras
 
 1. Abra o notebook no Colab e execute as células na ordem.
-2. Observe as primeiras linhas e a quantidade de exemplos de cada fruta.
-3. Compare os valores mínimos e máximos das características por classe.
+2. Examine com calma a tabela completa de exemplos conhecidos.
+3. Decida por conta própria como procurar padrões e construir suas regras.
 4. Escreva sua função de classificação usando apenas comparações e `if`, `elif` e `else`.
-5. Aplique a função aos exemplos conhecidos e observe os erros.
-6. Ajuste as regras somente com base nesses exemplos.
-7. Explique quais características foram mais úteis e quais frutas foram mais difíceis de separar.
+5. Aplique a função aos exemplos conhecidos, observe os erros e revise sua estratégia.
+6. Encerre os ajustes quando chegar a uma solução que considere razoável e consiga explicar.
 
 ### Parte 2 — testar em frutas novas
 
