@@ -44,7 +44,7 @@ O notebook não indicará quais características ou intervalos usar. Não procur
 
 [Abra o notebook da atividade](https://drive.google.com/file/d/14cWezTGM5V8AzrbFg4VQx4dLzWibvwfw/view?usp=sharing)
 
-> **Antes de editar:** abra o arquivo com o Google Colaboratory e use **Arquivo → Salvar uma cópia no Drive**. Trabalhe na sua própria cópia para não perder as alterações.
+> **Antes de editar:** acesse o arquivo com sua conta institucional `@inf`, abra-o com o Google Colaboratory e use **Arquivo → Salvar uma cópia no Drive**. Trabalhe na sua própria cópia para não perder as alterações.
 
 O notebook já contém o carregamento dos arquivos e os cálculos de avaliação. Você precisa completar a função de classificação, justificar suas escolhas e analisar os resultados.
 
