@@ -5,32 +5,36 @@ title: Semana 7 - Introdução ao Aprendizado de Máquina
 
 # Semana 7 - Introdução ao Aprendizado de Máquina
 
-Nos encontros anteriores, vimos que um programa pode tomar uma decisão usando exemplos: um novo ponto próximo de exemplos de chuva provavelmente também representa chuva; vários vizinhos podem votar; ou uma reta pode separar duas regiões. Nesta semana, vamos organizar essas ideias e experimentar o processo completo em um problema pequeno.
+Até aqui, estudamos problemas em que conseguíamos programar explicitamente um caminho para a solução. Nas buscas, definimos os estados, as ações possíveis e o objetivo. Na otimização, definimos as candidatas, as restrições, uma forma de comparar soluções e uma estratégia para melhorá-las. Em cada caso, fomos nós que escrevemos as regras que o computador deveria seguir.
 
-O objetivo não é decorar nomes de algoritmos. Queremos entender que informações usamos para tomar uma decisão, como criamos uma regra a partir de exemplos e por que precisamos experimentar essa regra em dados que ainda não vimos.
+Mas nem sempre conseguimos descrever boas regras de antemão. Como escrever todas as condições necessárias para reconhecer uma fruta, identificar uma mensagem indesejada ou prever se vai chover? Em aprendizado de máquina, usamos exemplos para construir um modelo capaz de fazer previsões sobre novos casos.
+
+Nesta semana, vamos conhecer essa mudança de perspectiva. O objetivo não é decorar nomes de algoritmos, mas experimentar como exemplos podem nos ajudar a formular uma solução e como verificar se ela funciona em casos novos. Os nomes formais das etapas aparecerão depois da experiência.
 
 ## Roteiro de estudo
 
-### 1. Comece pela pergunta
+### 1. Entenda a mudança de perspectiva
 
 Leia o texto **Aprendizado de Máquina**, de Ricardo Matsumura, até conseguir explicar com suas palavras:
 
-- que diferença há entre escrever todas as regras de um programa e ajustá-las a partir de exemplos;
+- que diferença há entre programar diretamente todas as regras e construir uma solução a partir de exemplos;
 - que tipo de resposta esperamos em um problema de classificação;
 - por que acertar os exemplos conhecidos não basta.
 
-Use o vídeo de introdução do H2IA para rever essas ideias por outro caminho. Enquanto acompanha, procure identificar os dados de entrada, a resposta esperada e o critério usado para dizer se uma previsão foi boa.
+Use o vídeo de introdução do H2IA para conhecer essas ideias por outro caminho. Enquanto acompanha, procure identificar os dados de entrada, a resposta esperada e o critério usado para dizer se uma previsão foi boa.
 
-### 2. Retome os exemplos da aula
+### 2. Pense em um primeiro problema
 
-No exemplo da chuva, pressão e umidade eram características do dia, enquanto chuva ou não chuva era a resposta que queríamos prever. Primeiro usamos a proximidade entre pontos; depois consideramos vários vizinhos e uma separação por uma reta.
+Imagine que temos uma tabela com a pressão e a umidade de vários dias e, para cada linha, sabemos se choveu ou não. Agora recebemos os valores de um novo dia e queremos fazer uma previsão.
 
-Antes de seguir, tente responder:
+Antes de procurar um algoritmo, tente responder:
 
-1. Como você classificaria um novo ponto muito próximo apenas de exemplos de chuva?
-2. O que poderia acontecer se os vizinhos mais próximos discordassem?
-3. Uma mesma reta consegue separar qualquer conjunto de pontos?
-4. Como saber se uma regra continuará funcionando em exemplos novos?
+1. Que informações do passado poderiam ajudar na decisão?
+2. Como você transformaria os exemplos conhecidos em uma regra?
+3. O que faria se casos parecidos tivessem respostas diferentes?
+4. Como verificaria se sua regra funciona em dias que ela ainda não viu?
+
+Uma possibilidade seria comparar o novo dia com os exemplos mais próximos. Outra seria procurar uma fronteira que separasse os casos de chuva e de não chuva. Essas ideias levam a diferentes algoritmos, que serão estudados ao longo do treinamento. Antes disso, a atividade desta semana permitirá experimentar o problema central: construir uma regra a partir de dados e verificar se ela funciona fora dos exemplos usados em sua criação.
 
 ### 3. Faça a atividade das frutas
 
@@ -60,7 +64,7 @@ Essa ordem é importante. Se você consultar as respostas do teste e continuar a
 | :--: | :--: | :-- | :-- |
 | Principal | Texto | [Aprendizado de Máquina — Ricardo Matsumura](https://ricardomatsumura.medium.com/aprendizado-de-m%C3%A1quina-a3bbf2fa4051) | Leia para organizar as ideias de modelo, classificação e separação dos dados. |
 | Principal | Vídeo | [Introdução ao Aprendizado de Máquina — H2IA](https://www.youtube.com/watch?v=RI3GVY4DL8s&t=6s) | Use como explicação geral e anote exemplos de entrada, saída e avaliação. |
-| Revisão | Aula e notas | [CS50 AI — Learning](https://cs50.harvard.edu/ai/2020/weeks/4/) | Retome vizinho mais próximo, KNN e separação por uma fronteira. Material em inglês. |
+| Complementar | Aula e notas | [CS50 AI — Learning](https://cs50.harvard.edu/ai/2020/weeks/4/) | Conheça vizinho mais próximo, KNN e separação por uma fronteira. Material em inglês. |
 | Aprofundamento | Livro | Russell e Norvig, *Artificial Intelligence: A Modern Approach*, capítulo 19 | Referência opcional para aprofundar os conceitos depois da atividade. |
 
 ## Atividade: construindo regras para classificar frutas
