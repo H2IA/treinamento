@@ -42,7 +42,9 @@ Na atividade, você receberá uma tabela completa com exemplos de maçãs, tange
 
 O notebook não indicará quais características ou intervalos usar. Não procure uma biblioteca que já faça a classificação. A parte importante é enfrentar a dificuldade de formular as regras, testá-las e perceber onde elas funcionam ou falham.
 
-[Abra o notebook da atividade no Google Colab](https://colab.research.google.com/github/H2IA/treinamento/blob/main/notebooks/atividade-frutas.ipynb)
+[Abra o notebook da atividade](https://drive.google.com/file/d/14cWezTGM5V8AzrbFg4VQx4dLzWibvwfw/view?usp=sharing)
+
+> **Antes de editar:** abra o arquivo com o Google Colaboratory e use **Arquivo → Salvar uma cópia no Drive**. Trabalhe na sua própria cópia para não perder as alterações.
 
 O notebook já contém o carregamento dos arquivos e os cálculos de avaliação. Você precisa completar a função de classificação, justificar suas escolhas e analisar os resultados.
 
