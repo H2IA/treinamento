@@ -22,6 +22,7 @@ Os números das semanas organizam o percurso. Se você está retomando, use-os c
 | 4 | [Buscas Sem Informação](week-4.md) |
 | 5 | [Buscas Com Informação](week-5.md) |
 | 6 | [Otimização e Metaheurísticas](week-6.md) |
+| 7 | [Introdução ao Aprendizado de Máquina](week-7.md) |
 
 ## Dúvidas?
 
