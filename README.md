@@ -24,6 +24,7 @@ Os números das semanas organizam o percurso. Se você está retomando, use-os c
 | 6 | [Otimização e Metaheurísticas](week-6.md) |
 | 7 | [Introdução ao Aprendizado de Máquina](week-7.md) |
 | 8 | [Classificação](week-8.md) |
+| 9 | [Regressão Linear](week-9.md) |
 
 ## Dúvidas?
 
