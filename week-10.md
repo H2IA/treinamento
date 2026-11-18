@@ -19,7 +19,7 @@ Olá, pessoal. Obrigado pela presença em aula. Eu escolhi alguns materiais que 
 
 ## Tarefa
 
-[Abra o notebook da tarefa](https://colab.research.google.com/github/H2IA/treinamento/blob/main/notebooks/atividade-mlp.ipynb)
+[Abra o notebook da tarefa](https://colab.research.google.com/drive/1t0llnvBUmwU7rN8acSnPfTUZ7ik8a2SV?usp=sharing)
 
 > Antes de editar, use **Arquivo → Salvar uma cópia no Drive** e trabalhe na sua cópia.
 
