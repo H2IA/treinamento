@@ -5,13 +5,9 @@ title: Semana 10 - Redes Neurais (MLP)
 
 # Semana 10 - Redes Neurais (MLP)
 
-Na semana passada, o modelo era uma soma de atributos multiplicados por pesos, e o gradiente descendente ajustava esses pesos dando pequenos passos contra o erro. Esta semana a gente empilha essa ideia: cada neurônio faz uma soma com pesos, passa o resultado por uma função de ativação e entrega a saída para a camada seguinte. Esse empilhamento é o **perceptron de múltiplas camadas**, a MLP.
-
-Na aula, montamos uma MLP pequena, com 2 entradas, 4 neurônios ocultos e 3 saídas, e a usamos para classificar as flores do Iris pelo comprimento e pela largura da sépala. Vimos o **forward**, que leva a flor da entrada até a resposta; a **perda**, que mede o quanto a rede errou; e o **backpropagation**, que usa a regra da cadeia para descobrir a culpa de cada peso nesse erro. No fim, escrevemos tudo isso em poucas linhas de PyTorch.
+Olá, pessoal. Obrigado pela presença na aula de hoje. Eu escolhi alguns materiais que eu considero importantes caso alguém queira aprofundar o estudo em redes neurais/mlp. A tarefa que eu proponho, inicialmente, é a construção da rede neural, não inteiramente, preenchendo algumas lacunas no código que vimos em aula. Acredito que ajudará fixar o conceito e a construção do algoritmo.
 
 ## Material de apoio
-
-Os materiais abaixo são para quem quiser aprofundar o estudo de redes neurais. Não é preciso ler tudo: comece pelos vídeos e use os livros quando quiser ver as contas com mais detalhe.
 
 | Tipo | Material | Como usar |
 | :--: | :-- | :-- |
