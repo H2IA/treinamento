@@ -25,6 +25,7 @@ Os números das semanas organizam o percurso. Se você está retomando, use-os c
 | 7 | [Introdução ao Aprendizado de Máquina](week-7.md) |
 | 8 | [Classificação](week-8.md) |
 | 9 | [Regressão Linear](week-9.md) |
+| 10 | [Redes Neurais (MLP)](week-10.md) |
 
 ## Dúvidas?
 
